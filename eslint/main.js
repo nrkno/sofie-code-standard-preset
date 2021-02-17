@@ -35,6 +35,7 @@ module.exports = {
 				'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
 				'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
 				'no-use-before-define': 'off',
+				'@typescript-eslint/no-floating-promises': 'error',
 			},
 		},
 		{
