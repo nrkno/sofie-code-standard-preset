@@ -30,7 +30,7 @@ const pkgInfo = readPkgUp.sync()
 const projectNameAndVersion = `${pkgInfo.packageJson.name}@${pkgInfo.packageJson.version}`
 
 // TODO - Add option driven allowList selection with a list for GPL projects
-const allowListForMit = 'MIT;BSD;ISC;Apache-2.0;CC0;CC-BY-3.0;Unlicense'
+const allowListForMit = 'MIT;BSD;ISC;Apache-2.0;CC0;CC-BY-3.0;Unlicense;Artistic-2.0'
 
 let excludePackages = projectNameAndVersion
 if (cli.flags.allowPackages) {
