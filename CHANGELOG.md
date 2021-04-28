@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.2.4...v0.2.5) (2021-04-28)
+
+
+### Features
+
+* allow Artistic-2.0 as it is MIT compatible ([b490bd3](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/b490bd3e1d0ca51f20539b32d8d357b756cc0547))
+
 ### [0.2.4](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.2.3...v0.2.4) (2021-02-19)
 
 
