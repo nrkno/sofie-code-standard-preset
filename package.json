@@ -58,7 +58,7 @@
 		"eslint-plugin-prettier": "^3.4.0",
 		"husky": "^4.3.8",
 		"license-checker": "^25.0.1",
-		"lint-staged": "^10.5.4",
+		"lint-staged": "^11.0.0",
 		"meow": "^10.0.0",
 		"prettier": "^2.3.0",
 		"read-pkg-up": "^8.0.0",
