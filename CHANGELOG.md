@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.2.5...v0.3.0) (2021-05-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* update license checker script to esm
+
+### Features
+
+* github actions ([35a5f4b](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/35a5f4b8929cac12b9fbf34e605690fb3836b229))
+* update license checker script to esm ([d07d311](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/d07d311a500fc88064f7c882f3370af58511da41))
+
 ### [0.2.5](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.2.4...v0.2.5) (2021-04-28)
 
 
