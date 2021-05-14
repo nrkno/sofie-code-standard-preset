@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 'use strict'
-const meow = require('meow')
-const shell = require('shelljs')
-const readPkgUp = require('read-pkg-up')
+import meow from 'meow'
+import { readPackageUpSync } from 'read-pkg-up'
+import shell from 'shelljs'
 
 const cli = meow(
 	`
@@ -14,6 +14,7 @@ const cli = meow(
 	  --allowPackages Semi-colon separated list of packages to ignore (eg cycle@1.0.3;underscore@1.12.0)
 `,
 	{
+		importMeta: import.meta,
 		flags: {
 			debug: {
 				type: 'boolean',
@@ -26,7 +27,7 @@ const cli = meow(
 )
 
 // This is so that when used in a private project it validates
-const pkgInfo = readPkgUp.sync()
+const pkgInfo = readPackageUpSync()
 const projectNameAndVersion = `${pkgInfo.packageJson.name}@${pkgInfo.packageJson.version}`
 
 // TODO - Add option driven allowList selection with a list for GPL projects
