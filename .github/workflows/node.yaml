@@ -9,63 +9,6 @@ on:
   pull_request:
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    timeout-minutes: 15
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-      - name: Prepare Environment
-        run: |
-          yarn install
-          yarn build
-        env:
-          CI: true
-      - name: Run typecheck and linter
-        run: |
-          yarn lint
-        env:
-          CI: true
-
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    timeout-minutes: 15
-
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Prepare Environment
-        run: |
-          yarn install
-        env:
-          CI: true
-      - name: Run tests
-        run: |
-          yarn unit
-        env:
-          CI: true
-      - name: Send coverage
-        if: matrix.node-version == '14.x'
-        run: |
-          yarn send-coverage
-        env:
-          CI: true
-
   release:
     name: Release
     runs-on: ubuntu-latest
@@ -76,7 +19,6 @@ jobs:
     if: contains(github.ref, 'refs/tags/')
 
     needs:
-      - test
       - validate-dependencies
 
     steps:
