@@ -50,7 +50,6 @@ jobs:
           GIT_HASH=$(git rev-parse --short HEAD)
           PRERELEASE_TAG=nightly-$(echo "${{ steps.prerelease-tag.outputs.tag }}" | sed -r 's/[^a-z0-9]+/-/gi')
           yarn release --prerelease $PRERELEASE_TAG-$COMMIT_DATE-$GIT_HASH --skip.changelog --skip.tag --skip.commit
-          yarn build
         env:
           CI: true
       - name: Publish to NPM
