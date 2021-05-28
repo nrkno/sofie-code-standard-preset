@@ -24,7 +24,7 @@ module.exports = {
 		'no-extra-semi': 'off',
 		'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
 		'no-use-before-define': 'off',
-		'no-warning-comments': ['error', { terms: ['nocommit'] }],
+		'no-warning-comments': ['error', { terms: ['nocommit', '@nocommit', '@no-commit'] }],
 		'jest/no-mocks-import': 'off',
 	},
 	tsRules: {
