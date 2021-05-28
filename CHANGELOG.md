@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.4.0...v0.4.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* add more keywords to blocked comments ([0f7dabc](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/0f7dabc05e501136dda2c5c55a4a69de2b733b9d))
+
 ## [0.4.0](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.3.0...v0.4.0) (2021-05-28)
 
 
