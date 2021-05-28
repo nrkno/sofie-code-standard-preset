@@ -1,6 +1,8 @@
+const { commonPlugins, tsPlugins, commonExtends, tsExtends, commonRules, tsRules, tsParser } = require('./fragments')
+
 module.exports = {
-	extends: ['eslint:recommended', 'plugin:node/recommended', 'plugin:prettier/recommended'],
-	plugins: ['prettier'],
+	extends: commonExtends,
+	plugins: commonPlugins,
 	rules: {
 		'prettier/prettier': 'error',
 	},
@@ -10,32 +12,15 @@ module.exports = {
 		// Note: these replace the values defined above, so make sure to extend them if they are needed
 		{
 			files: ['*.ts'],
-			extends: [
-				'eslint:recommended',
-				'plugin:@typescript-eslint/eslint-recommended',
-				'plugin:@typescript-eslint/recommended',
-				'plugin:node/recommended',
-				'prettier',
-				'plugin:prettier/recommended',
-			],
-			plugins: ['@typescript-eslint', 'prettier'],
-			parser: '@typescript-eslint/parser',
-			parserOptions: { project: './tsconfig.json' },
-			settings: {
-				node: {
-					tryExtensions: ['.js', '.json', '.node', '.ts', '.d.ts'],
-				},
+			extends: tsExtends,
+			plugins: tsPlugins,
+			...tsParser,
+			env: {
+				'jest/globals': false, // Block jest from this
 			},
 			rules: {
-				'prettier/prettier': 'error',
-				'no-unused-vars': 'off',
-				'no-extra-semi': 'off',
-				'@typescript-eslint/no-explicit-any': 'off',
-				'@typescript-eslint/interface-name-prefix': 'off',
-				'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-				'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
-				'no-use-before-define': 'off',
-				'@typescript-eslint/no-floating-promises': 'error',
+				...commonRules,
+				...tsRules,
 			},
 		},
 		{
@@ -45,30 +30,40 @@ module.exports = {
 					tryExtensions: ['.js', '.json', '.node', '.ts'],
 				},
 			},
+			env: {
+				'jest/globals': false, // Block jest from this
+			},
 			rules: {
-				'prettier/prettier': 'error',
-				'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-				'no-extra-semi': 'off',
-				'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
-				'no-use-before-define': 'off',
+				...commonRules,
 			},
 		},
 		{
 			files: ['src/**/__tests__/**/*.ts'],
+			extends: tsExtends,
+			plugins: tsPlugins,
+			...tsParser,
 			env: {
+				'jest/globals': true,
 				jest: true,
 			},
 			rules: {
-				'prettier/prettier': 'error',
+				...commonRules,
+				...tsRules,
 				'@typescript-eslint/ban-ts-ignore': 'off',
 				'@typescript-eslint/ban-ts-comment': 'off',
-				'no-use-before-define': 'off',
 			},
 		},
 		{
 			files: ['examples/**/*.ts'],
+			extends: tsExtends,
+			plugins: tsPlugins,
+			...tsParser,
+			env: {
+				'jest/globals': false, // Block jest from this
+			},
 			rules: {
-				'prettier/prettier': 'error',
+				...commonRules,
+				...tsRules,
 				'no-process-exit': 'off',
 				'node/no-missing-import': 'off',
 			},
