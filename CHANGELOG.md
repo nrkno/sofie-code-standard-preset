@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.3.0...v0.4.0) (2021-05-28)
+
+
+### Features
+
+* add jest plugin and nocommit rule ([1d9eee8](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/1d9eee84f7e1d2a5da91758306335cdf9424c19f))
+* update typescript dependency ([6e4c5c1](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/6e4c5c1da51ad882908d8a662959ba64ee11604a))
+
 ## [0.3.0](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.2.5...v0.3.0) (2021-05-14)
 
 
