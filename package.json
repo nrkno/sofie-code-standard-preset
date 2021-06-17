@@ -50,9 +50,9 @@
 		"standard-version": "^9.3.0"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^4.25.0",
-		"@typescript-eslint/parser": "^4.25.0",
-		"eslint": "^7.27.0",
+		"@typescript-eslint/eslint-plugin": "^4.27.0",
+		"@typescript-eslint/parser": "^4.27.0",
+		"eslint": "^7.28.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-jest": "^24.3.6",
 		"eslint-plugin-node": "^11.1.0",
@@ -60,8 +60,8 @@
 		"husky": "^4.3.8",
 		"license-checker": "^25.0.1",
 		"lint-staged": "^11.0.0",
-		"meow": "^10.0.0",
-		"prettier": "^2.3.0",
+		"meow": "^10.0.1",
+		"prettier": "^2.3.1",
 		"read-pkg-up": "^8.0.0",
 		"shelljs": "^0.8.4"
 	},
