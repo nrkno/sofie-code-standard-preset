@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.2](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.4.1...v0.4.2) (2021-06-17)
+
+
+### Bug Fixes
+
+* allow variables whose name starts with an _ ([561cd20](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/561cd205da88a86255f16ff4853deeba7c85a780))
+
 ### [0.4.1](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.4.0...v0.4.1) (2021-05-28)
 
 
