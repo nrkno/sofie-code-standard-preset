@@ -20,26 +20,32 @@ A script for checking compatible licenses is included.
     ...,
     "scripts": {
         ...,
-        "lint": "eslint . --ext .ts --ext .js --ext .tsx --ext .jsx --ignore-pattern dist",
+		"prepare": "husky install",
+		"lint:raw": "eslint --ext .ts --ext .js --ext .tsx --ext .jsx --ignore-pattern dist",
+        "lint": "yarn lint:raw .",
         "lint-fix": "yarn lint --fix",
         "license-validate": "yarn sofie-licensecheck"
     },
     "prettier": "@sofie-automation/code-standard-preset/.prettierrc.json",
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
     "lint-staged": {
         "*.{css,json,md,scss}": [
             "prettier --write"
         ],
         "*.{ts,tsx,js,jsx}": [
-            "yarn lint-fix"
+            "yarn lint:raw --fix"
         ]
     },
     ...
 }
+```
+
+**Create** the husky hook file `.husky/pre-commit`
+
+```sh
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn lint-staged
 ```
 
 **Adjust** build script references to make sure they use `tsconfig.build.json`, e.g. `tsc -p tsconfig.build.json`.
@@ -49,9 +55,8 @@ A script for checking compatible licenses is included.
 - `@types\node` and `@types\jest` (if using)
 - Typescript 4 or above, e.g. `~4.0` with an up-to-date `ts-lib`
 - `jest` and `ts-jest`, if using
-- `husky` and `lint-staged`, for git precommit hooks to work
 
-**Remove** any other linting configurations or linters. Also, `node-license-validator` is no longer required. Remove libraries that are re-exported by this project `eslint` and `prettier`
+**Remove** any other linting configurations or linters. Also, `node-license-validator` is no longer required. Remove libraries that are re-exported by this project `husky`, `lint-staged`, `eslint` and `prettier`
 
 ### Files
 
@@ -133,3 +138,15 @@ module.exports = {
 ```
 
 **Remove** any other old linting or tsconfig files and refernces to them, for example a `config` folder containing `tsconfig...` files. These are no longer required.
+
+### Upgrade
+
+#### v0.4 to v0.5
+
+This updates husky, and the config that goes with it.
+
+Steps:
+
+- Create the `.husky/pre-commit` file
+- Remove the old husky config from `package.json`
+- Update the scripts and lint-staged config in `package.json`
