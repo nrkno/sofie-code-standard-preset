@@ -47,22 +47,22 @@
 		"/.prettierrc.json"
 	],
 	"devDependencies": {
-		"standard-version": "^9.3.1"
+		"standard-version": "^9.3.2"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^4.31.1",
-		"@typescript-eslint/parser": "^4.31.1",
+		"@typescript-eslint/eslint-plugin": "^4.33.0",
+		"@typescript-eslint/parser": "^4.33.0",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-jest": "^24.4.2",
+		"eslint-plugin-jest": "^24.7.0",
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-prettier": "^4.0.0",
 		"husky": "^4.3.8",
 		"license-checker": "^25.0.1",
-		"lint-staged": "^11.1.2",
+		"lint-staged": "^11.2.6",
 		"meow": "^10.1.1",
 		"prettier": "^2.4.1",
-		"read-pkg-up": "^8.0.0",
+		"read-pkg-up": "^9.0.0",
 		"shelljs": "^0.8.4"
 	},
 	"peerDependencies": {
