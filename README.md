@@ -49,8 +49,9 @@ A script for checking compatible licenses is included.
 - `@types\node` and `@types\jest` (if using)
 - Typescript 4 or above, e.g. `~4.0` with an up-to-date `ts-lib`
 - `jest` and `ts-jest`, if using
+- `husky` and `lint-staged`, for git precommit hooks to work
 
-**Remove** any other linting configurations or linters. Also, `node-license-validator` is no longer required. Remove libraries that are re-exported by this project `husky`, `lint-staged` and `prettier`
+**Remove** any other linting configurations or linters. Also, `node-license-validator` is no longer required. Remove libraries that are re-exported by this project `eslint` and `prettier`
 
 ### Files
 
@@ -61,6 +62,19 @@ _.eslintrc.json_
 ```json
 {
 	"extends": "./node_modules/@sofie-automation/code-standard-preset/eslint/main"
+}
+```
+
+If you are not using jest in your project, you will need to tell eslint to not try to detect the jest version:
+
+```json
+{
+	"extends": "./node_modules/@sofie-automation/code-standard-preset/eslint/main",
+	"settings": {
+		"jest": {
+			"version": "latest"
+		}
+	}
 }
 ```
 
