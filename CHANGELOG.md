@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.4.2...v0.5.0) (2021-11-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* re-add a newer version of husky as it doesn't autoinstall now
+* remove husky as a dependency, as if installed it cannot be disabled which can cause problems
+
+### Features
+
+* re-add a newer version of husky as it doesn't autoinstall now ([e3699b5](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/e3699b52cda512cfc115a13ab0cd00d46fcec0af))
+* remove husky as a dependency, as if installed it cannot be disabled which can cause problems ([44138b2](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/44138b2c9fad4f3e330173f606fad20ab4f0c304))
+* update eslint to v8 ([dc4a44a](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/dc4a44adb7800b4a885a7d4bfc4034b387aa576a))
+
 ### [0.4.2](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.4.1...v0.4.2) (2021-06-17)
 
 
