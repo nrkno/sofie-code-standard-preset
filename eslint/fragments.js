@@ -12,6 +12,7 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/eslint-recommended',
 		'plugin:@typescript-eslint/recommended',
+		'plugin:@typescript-eslint/recommended-requiring-type-checking',
 		'plugin:node/recommended',
 		'plugin:jest/recommended',
 		'prettier',
@@ -33,6 +34,9 @@ module.exports = {
 		'@typescript-eslint/interface-name-prefix': 'off',
 		'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_(.+)' }],
 		'@typescript-eslint/no-floating-promises': 'error',
+		'@typescript-eslint/explicit-module-boundary-types': ['error'],
+		'@typescript-eslint/promise-function-async': 'error',
+		'@typescript-eslint/require-await': 'off', // conflicts with 'promise-function-async'
 	},
 
 	tsParser: {
