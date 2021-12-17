@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.5.0...v0.5.1) (2021-12-17)
+
+
+### Bug Fixes
+
+* allow 'Python-2.0' license ([7b6f674](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/commit/7b6f6741228e9c71a289c57d815d69b528fd8367))
+
 ## [0.5.0](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/compare/v0.4.2...v0.5.0) (2021-11-01)
 
 
