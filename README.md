@@ -1,6 +1,6 @@
 # Sofie: The Modern TV News Studio Automation System (code standard preset)
 
-[![Node CI](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/actions/workflows/node.yaml/badge.svg)](https://github.com/nrkno/tv-automation-sofie-code-standard-preset/actions/workflows/node.yaml)
+[![Node CI](https://github.com/nrkno/sofie-code-standard-preset/actions/workflows/node.yaml/badge.svg)](https://github.com/nrkno/sofie-code-standard-preset/actions/workflows/node.yaml)
 [![npm](https://img.shields.io/npm/v/@sofie-automation/code-standard-preset)](https://www.npmjs.com/package/@sofie-automation/code-standard-preset)
 
 This library is used in the [**Sofie** TV News Studio Automation System](https://github.com/nrkno/Sofie-TV-automation/) for defining a code standard preset through [eslint](https://esling.org) and [prettier](https://prettier.io/).
