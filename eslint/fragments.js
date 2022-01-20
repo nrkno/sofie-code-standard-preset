@@ -37,6 +37,16 @@ module.exports = {
 		'@typescript-eslint/explicit-module-boundary-types': ['error'],
 		'@typescript-eslint/promise-function-async': 'error',
 		'@typescript-eslint/require-await': 'off', // conflicts with 'promise-function-async'
+
+		/** Disable some annoyingly strict rules from the 'recommended-requiring-type-checking' pack */
+		'@typescript-eslint/no-unsafe-assignment': 0,
+		'@typescript-eslint/no-unsafe-member-access': 0,
+		'@typescript-eslint/no-unsafe-argument': 0,
+		'@typescript-eslint/no-unsafe-return': 0,
+		'@typescript-eslint/no-unsafe-call': 0,
+		'@typescript-eslint/restrict-template-expressions': 0,
+		'@typescript-eslint/restrict-plus-operands': 0,
+		/** End 'recommended-requiring-type-checking' overrides */
 	},
 
 	tsParser: {
