@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v1.0.0...v1.1.0) (2022-01-25)
+
+
+### Features
+
+* enable strict type checking. enable some more rules ([#8](https://github.com/nrkno/sofie-code-standard-preset/issues/8)) ([fc97657](https://github.com/nrkno/sofie-code-standard-preset/commit/fc97657b39ee1a34323ad62ccca3c33fc9d38cf0))
+
 ## [1.0.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v0.5.1...v1.0.0) (2022-01-18)
 
 
