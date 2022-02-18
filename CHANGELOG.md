@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v1.1.0...v2.0.0) (2022-02-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* update minimum node version to "^14.18 || ^16.14"
+
+### Features
+
+* update minimum node version to "^14.18 || ^16.14" ([5ae7495](https://github.com/nrkno/sofie-code-standard-preset/commit/5ae74952cadcf6124402029bce31ca009cf6602e))
+
 ## [1.1.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v1.0.0...v1.1.0) (2022-01-25)
 
 
