@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.0.1...v2.0.2) (2022-05-19)
+
+
+### Bug Fixes
+
+* add no-duplicate-enum-values ([#9](https://github.com/nrkno/sofie-code-standard-preset/issues/9)) ([898cb9d](https://github.com/nrkno/sofie-code-standard-preset/commit/898cb9df24bba9763cccff631f9e94c4c086376b))
+
 ### [2.0.1](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.0.0...v2.0.1) (2022-04-20)
 
 
