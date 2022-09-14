@@ -31,7 +31,7 @@
 		"sofie-licensecheck": "./bin/checkLicenses.mjs"
 	},
 	"scripts": {
-		"changelog": "standard-version",
+		"changelog": "./bin/updateVersion.mjs",
 		"release": "yarn reset && yarn changelog",
 		"reset": "git clean -dfx && git reset --hard && yarn",
 		"validate:dependencies": "yarn audit --groups dependencies && yarn license-validate",
@@ -46,9 +46,7 @@
 		"/eslint",
 		"/.prettierrc.json"
 	],
-	"devDependencies": {
-		"standard-version": "^9.3.2"
-	},
+	"devDependencies": {},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.24.0",
 		"@typescript-eslint/parser": "^5.24.0",
