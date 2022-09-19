@@ -28,10 +28,11 @@
 		"node": "^14.18 || ^16.14 || ^18.0"
 	},
 	"bin": {
-		"sofie-licensecheck": "./bin/checkLicenses.mjs"
+		"sofie-licensecheck": "./bin/checkLicenses.mjs",
+		"sofie-version": "./bin/updateVersion.mjs"
 	},
 	"scripts": {
-		"changelog": "standard-version",
+		"changelog": "./bin/updateVersion.mjs",
 		"release": "yarn reset && yarn changelog",
 		"reset": "git clean -dfx && git reset --hard && yarn",
 		"validate:dependencies": "yarn audit --groups dependencies && yarn license-validate",
@@ -46,9 +47,7 @@
 		"/eslint",
 		"/.prettierrc.json"
 	],
-	"devDependencies": {
-		"standard-version": "^9.3.2"
-	},
+	"devDependencies": {},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.24.0",
 		"@typescript-eslint/parser": "^5.24.0",
@@ -63,7 +62,8 @@
 		"meow": "^10.1.2",
 		"prettier": "^2.5.1",
 		"read-pkg-up": "^9.1.0",
-		"shelljs": "^0.8.5"
+		"shelljs": "^0.8.5",
+		"semver": "^7.3.7"
 	},
 	"peerDependencies": {
 		"typescript": "~4.5"
