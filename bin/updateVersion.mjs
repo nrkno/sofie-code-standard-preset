@@ -3,7 +3,6 @@ import semver from 'semver'
 import { exec } from 'child_process'
 import { readFile, writeFile } from 'fs/promises'
 
-const REPO_URL = 'https://github.com/nrkno/Sofie-TV-automation'
 const START_OF_LAST_RELEASE_PATTERN = /(^#+ \[?[0-9]+\.[0-9]+\.[0-9]+|<a name=)/m
 const HEADER = `# Changelog\n\nAll notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.\n\n`
 
@@ -13,8 +12,14 @@ const isPrerelease = !!process.argv.find((arg) => arg === '--prerelease')
 const isDryRun = !!process.argv.find((arg) => arg === '--dry-run')
 
 const packageFile = JSON.parse(await readFile('./package.json', { encoding: 'utf-8' }))
+
+if (!packageFile.homepage) {
+	console.error('No repository homepage specified in the package.json, exiting...')
+	process.exit(1)
+}
+
 const currentVersion = packageFile.version
-const repoUrl = packageFile.homepage.split('#')[0] || REPO_URL
+const repoUrl = packageFile.homepage.split('#')[0]
 
 // find last valid tag
 const tags = (await execPromise('git tag -l --sort=-v:refname')).split('\n')
