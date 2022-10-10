@@ -49,21 +49,21 @@
 	],
 	"devDependencies": {},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.24.0",
-		"@typescript-eslint/parser": "^5.24.0",
-		"eslint": "^8.9.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-jest": "^26.1.1",
+		"@typescript-eslint/eslint-plugin": "^5.39.0",
+		"@typescript-eslint/parser": "^5.39.0",
+		"eslint": "^8.25.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-jest": "^27.1.1",
 		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-prettier": "^4.0.0",
-		"husky": "^7.0.4",
+		"eslint-plugin-prettier": "^4.2.1",
+		"husky": "^8.0.1",
 		"license-checker": "^25.0.1",
-		"lint-staged": "^12.3.4",
-		"meow": "^10.1.2",
-		"prettier": "^2.5.1",
+		"lint-staged": "^13.0.3",
+		"meow": "^10.1.5",
+		"prettier": "^2.7.1",
 		"read-pkg-up": "^9.1.0",
-		"shelljs": "^0.8.5",
-		"semver": "^7.3.7"
+		"semver": "^7.3.8",
+		"shelljs": "^0.8.5"
 	},
 	"peerDependencies": {
 		"typescript": "~4.5"
