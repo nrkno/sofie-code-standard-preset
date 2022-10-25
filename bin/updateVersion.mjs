@@ -3,6 +3,7 @@ import semver from 'semver'
 import { exec } from 'child_process'
 import { readFile, writeFile } from 'fs/promises'
 import meow from 'meow'
+import { format } from 'date-fns'
 
 const cli = meow(
 	`
@@ -80,6 +81,17 @@ const changes = {}
 	}
 }
 
+let identifier = undefined
+if (cli.flags.prerelease){
+	identifier = cli.flags.prerelease.replace(/[^a-z0-9]+/gi, '-')
+
+	// add on a git and date suffix
+	const gitHash = await execPromise(`git rev-parse --short HEAD`)
+	const commitDateStr = await execPromise(`git log -1 --pretty=format:%ct HEAD`)
+	const commitDate= parseInt(commitDateStr.trim()) * 1000
+	identifier += `-${format(commitDate, 'yyyyMMdd-HHmmss')}-${gitHash.trim()}`
+}
+
 // create a markdown changelog
 const groups = {
 	feat: 'Features',
@@ -90,7 +102,7 @@ const hasFeatures = changes['feat']?.length > 0
 const nextVersion = semver.inc(
 	currentVersion,
 	(cli.flags.prerelease !== undefined ? 'pre' : '') + (hasBreaking ? 'major' : hasFeatures ? 'minor' : 'patch'),
-	cli.flags.prerelease
+	identifier
 )
 let md = `## [${nextVersion}](${repoUrl}/compare/${lastTag}...v${nextVersion}) (${new Date().toDateString()})\n`
 
