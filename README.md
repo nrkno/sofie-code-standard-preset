@@ -153,6 +153,12 @@ Steps:
 - Update the prerelease workflow to change `yarn release --prerelease $PRERELEASE_TAG-$COMMIT_DATE-$GIT_HASH --skip.changelog --skip.tag --skip.commit` into `yarn release --prerelease $PRERELEASE_TAG`
 - Remove the unused `COMMIT_DATE`, `GIT_HASH` and `COMMIT_TIMESTAMP` definitions above
 - Change the variable `PRERELEASE_TAG=nightly-$(echo "${{ steps.prerelease-tag.outputs.tag }}" | sed -r 's/[^a-z0-9]+/-/gi')` to `PRERELEASE_TAG=nightly-${{ steps.prerelease-tag.outputs.tag }}`
+- Make sure there aren't any other usages of `standard-version` or the release script, if there are they will need updating.
+- Below any `yarn publish ....` lines, add `echo "**Published:** $NEW_VERSION" >> $GITHUB_STEP_SUMMARY` to log the publish in the github action workflow
+
+While you are here, try to update any `uses:` lines in the actions workflows, common ones that need updating:
+- `actions/checkout@v3`
+- `actions/setup-node@v3`
 
 #### v0.4 to v0.5
 
