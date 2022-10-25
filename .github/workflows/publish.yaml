@@ -44,7 +44,7 @@ jobs:
       - name: Bump version and build
         if: ${{ steps.do-publish.outputs.publish }}
         run: |
-          PRERELEASE_TAG=nightly-$(echo "${{ steps.prerelease-tag.outputs.tag }}")
+          PRERELEASE_TAG=nightly-${{ steps.prerelease-tag.outputs.tag }}
           yarn release --prerelease $PRERELEASE_TAG
         env:
           CI: true
