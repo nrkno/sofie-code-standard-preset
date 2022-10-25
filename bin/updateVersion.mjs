@@ -2,14 +2,36 @@
 import semver from 'semver'
 import { exec } from 'child_process'
 import { readFile, writeFile } from 'fs/promises'
+import meow from 'meow'
+import { format } from 'date-fns'
+
+const cli = meow(
+	`
+    Usage
+      $ sofie-version
+
+    Options
+	  --dry-run  Simulate the version update process
+	  --prerelease Whether to tag a prerelease build, and the suffix to use
+`,
+	{
+		importMeta: import.meta,
+		flags: {
+			dryRun: {
+				type: 'boolean',
+			},
+			prerelease: {
+				type: 'string',
+			},
+		},
+	}
+)
+
 
 const START_OF_LAST_RELEASE_PATTERN = /(^#+ \[?[0-9]+\.[0-9]+\.[0-9]+|<a name=)/m
 const HEADER = `# Changelog\n\nAll notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.\n\n`
 
 const execPromise = (command) => new Promise((r) => exec(command, (e, out) => (e && r(e)) || r(out)))
-
-const isPrerelease = !!process.argv.find((arg) => arg === '--prerelease')
-const isDryRun = !!process.argv.find((arg) => arg === '--dry-run')
 
 const packageFile = JSON.parse(await readFile('./package.json', { encoding: 'utf-8' }))
 
@@ -59,6 +81,17 @@ const changes = {}
 	}
 }
 
+let identifier = undefined
+if (cli.flags.prerelease){
+	identifier = cli.flags.prerelease.replace(/[^a-z0-9]+/gi, '-')
+
+	// add on a git and date suffix
+	const gitHash = await execPromise(`git rev-parse --short HEAD`)
+	const commitDateStr = await execPromise(`git log -1 --pretty=format:%ct HEAD`)
+	const commitDate= parseInt(commitDateStr.trim()) * 1000
+	identifier += `-${format(commitDate, 'yyyyMMdd-HHmmss')}-${gitHash.trim()}`
+}
+
 // create a markdown changelog
 const groups = {
 	feat: 'Features',
@@ -68,7 +101,8 @@ const hasBreaking = Object.keys(breakingChanges).length > 0
 const hasFeatures = changes['feat']?.length > 0
 const nextVersion = semver.inc(
 	currentVersion,
-	(isPrerelease ? 'pre' : '') + (hasBreaking ? 'major' : hasFeatures ? 'minor' : 'patch')
+	(cli.flags.prerelease !== undefined ? 'pre' : '') + (hasBreaking ? 'major' : hasFeatures ? 'minor' : 'patch'),
+	identifier
 )
 let md = `## [${nextVersion}](${repoUrl}/compare/${lastTag}...v${nextVersion}) (${new Date().toDateString()})\n`
 
@@ -107,7 +141,7 @@ if (oldContentStart !== -1) {
 	oldContent = oldContent.substring(oldContentStart)
 }
 
-if (!isDryRun) {
+if (!cli.flags.dryRun) {
 	await writeFile('./CHANGELOG.md', HEADER + md + '\n\n' + oldContent)
 
 	// update the package.json
