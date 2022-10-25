@@ -1,6 +1,18 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
+
+## [2.1.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.0.2...v2.1.0) (Tue Oct 25 2022)
+
+
+### Fixes
+
+* use prerelease identifier (#11) [1f381e8](https://github.com/nrkno/sofie-code-standard-preset/commit/1f381e800f9cbb03910ba2705ecc924b075ea92c)
+* do not generate changelog without repo url [a944749](https://github.com/nrkno/sofie-code-standard-preset/commit/a94474987ddc441b1345c3edd1ff3e938efaf1e4)
+
+### Features
+
+* update dependencies [3c2dc09](https://github.com/nrkno/sofie-code-standard-preset/commit/3c2dc09d1b995f39fdcacd112f08eea3fd47d5e3)
 
 ### [2.0.2](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.0.1...v2.0.2) (2022-05-19)
 
