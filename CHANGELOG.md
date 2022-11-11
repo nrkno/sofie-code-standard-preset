@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
 
+## [2.2.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.1.0...v2.2.0) (Fri Nov 11 2022)
+
+
+### Features
+
+* **(updateVersion)** override for lastTag [9ae1576](https://github.com/nrkno/sofie-code-standard-preset/commit/9ae1576a2c8d7e87249710fabdc73805c8f32f60)
+
 ## [2.1.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.0.2...v2.1.0) (Tue Oct 25 2022)
 
 
