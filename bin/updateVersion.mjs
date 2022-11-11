@@ -13,6 +13,7 @@ const cli = meow(
     Options
 	  --dry-run  Simulate the version update process
 	  --prerelease Whether to tag a prerelease build, and the suffix to use
+	  --lastTag Optionally specify the last tag in the existing changelog
 `,
 	{
 		importMeta: import.meta,
@@ -23,10 +24,12 @@ const cli = meow(
 			prerelease: {
 				type: 'string',
 			},
+			lastTag: {
+				type: 'string',
+			},
 		},
 	}
 )
-
 
 const START_OF_LAST_RELEASE_PATTERN = /(^#+ \[?[0-9]+\.[0-9]+\.[0-9]+|<a name=)/m
 const HEADER = `# Changelog\n\nAll notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.\n\n`
@@ -44,8 +47,8 @@ const currentVersion = packageFile.version
 const repoUrl = packageFile.homepage.split('#')[0]
 
 // find last valid tag
-const tags = (await execPromise('git tag -l --sort=-v:refname')).split('\n')
-const lastTag = tags.find((tag) => semver.valid(tag))
+const tags = cli.flags.lastTag || (await execPromise('git tag -l --sort=-v:refname')).split('\n')
+const lastTag = cli.flags.lastTag || tags.find((tag) => semver.valid(tag))
 
 // find diff since last tag
 const rawDiff = await execPromise(`git log --format=+++%s__%b__%h__%H ${lastTag}..HEAD`)
@@ -62,6 +65,7 @@ const changes = {}
 	const conventional = /^(?<type>\w+)(?<scope>(?:\([^()\r\n]*\)|\()?(?<breaking>!)?)(?<subject>:.*)?/g
 	let commit = diff.shift()
 	while (commit) {
+		conventional.lastIndex = 0 // reset the index
 		const match = conventional.exec(commit.subject)
 
 		if (match && match.groups) {
@@ -82,13 +86,13 @@ const changes = {}
 }
 
 let identifier = undefined
-if (cli.flags.prerelease){
+if (cli.flags.prerelease) {
 	identifier = cli.flags.prerelease.replace(/[^a-z0-9]+/gi, '-')
 
 	// add on a git and date suffix
 	const gitHash = await execPromise(`git rev-parse --short HEAD`)
 	const commitDateStr = await execPromise(`git log -1 --pretty=format:%ct HEAD`)
-	const commitDate= parseInt(commitDateStr.trim()) * 1000
+	const commitDate = parseInt(commitDateStr.trim()) * 1000
 	identifier += `-${format(commitDate, 'yyyyMMdd-HHmmss')}-${gitHash.trim()}`
 }
 
