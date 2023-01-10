@@ -67,6 +67,6 @@
 		"shelljs": "^0.8.5"
 	},
 	"peerDependencies": {
-		"typescript": "~4.5"
+		"typescript": "~4.9"
 	}
 }
