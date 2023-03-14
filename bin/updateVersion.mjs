@@ -48,7 +48,7 @@ const repoUrl = packageFile.homepage.split('#')[0]
 
 // find last valid tag
 const tags = cli.flags.lastTag || (await execPromise('git tag -l --sort=-v:refname')).split('\n')
-const lastTag = cli.flags.lastTag || tags.find((tag) => semver.valid(tag))
+const lastTag = cli.flags.lastTag || tags.find((tag) => semver.valid(tag)) || ''
 
 // find diff since last tag
 const rawDiff = await execPromise(`git log --format=+++%s__%b__%h__%H ${lastTag}..HEAD`)
@@ -139,10 +139,19 @@ if (Object.keys(changes).length) {
 }
 
 // Add to the changelog file
-let oldContent = await readFile('./CHANGELOG.md', { encoding: 'utf-8' })
-const oldContentStart = oldContent.search(START_OF_LAST_RELEASE_PATTERN)
-if (oldContentStart !== -1) {
-	oldContent = oldContent.substring(oldContentStart)
+let oldContent = ''
+try {
+	oldContent = await readFile('./CHANGELOG.md', { encoding: 'utf-8' })
+	const oldContentStart = oldContent.search(START_OF_LAST_RELEASE_PATTERN)
+	if (oldContentStart !== -1) {
+		oldContent = oldContent.substring(oldContentStart)
+	}
+} catch (e) {
+	if (e.code === 'ENOENT') {
+		// File does not exist, ignore
+	} else {
+		throw e
+	}
 }
 
 if (!cli.flags.dryRun) {
