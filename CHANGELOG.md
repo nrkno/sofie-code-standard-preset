@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
 
+## [2.4.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.3.1...v2.4.0) (Tue Mar 14 2023)
+
+
+### Features
+
+* add `@sofie-automation/eslint-plugin` eslint rules [5dc8199](https://github.com/nrkno/sofie-code-standard-preset/commit/5dc8199e632cc0fbdd59ca552405f49e6c3e97d8)
+
+### Fixes
+
+* sofie-version script failing in fresh repository [6528082](https://github.com/nrkno/sofie-code-standard-preset/commit/65280822d57807d9ac67fa3cc8df4e6ed99b51ea)
+
 ## [2.3.1](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.3.0...v2.3.1) (Fri Feb 10 2023)
 
 
