@@ -7,6 +7,7 @@ module.exports = {
 		'plugin:node/recommended',
 		'plugin:jest/recommended',
 		'plugin:prettier/recommended',
+		'plugin:@sofie-automation/all',
 	],
 	tsExtends: [
 		'eslint:recommended',
