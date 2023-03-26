@@ -2,6 +2,7 @@
 import semver from 'semver'
 import { exec } from 'child_process'
 import { readFile, writeFile } from 'fs/promises'
+import { existsSync } from 'fs'
 import meow from 'meow'
 import { format } from 'date-fns'
 
@@ -158,7 +159,12 @@ if (!cli.flags.dryRun) {
 	await writeFile('./CHANGELOG.md', HEADER + md + '\n\n' + oldContent)
 
 	// update the package.json
-	await execPromise('yarn version --no-git-tag-version --new-version ' + nextVersion)
+	if (existsSync('.yarn')) {
+		// yarn 3 needs a different command
+		await execPromise('yarn version ' + nextVersion)
+	} else {
+		await execPromise('yarn version --no-git-tag-version --new-version ' + nextVersion)
+	}
 
 	// git commit
 	await execPromise(`git add package.json yarn.lock CHANGELOG.md`)
