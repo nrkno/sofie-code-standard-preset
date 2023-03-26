@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
 
+## [2.4.1](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.4.0...v2.4.1) (Sun Mar 26 2023)
+
+
+### Fixes
+
+* `sofie-version` support for yarn3 [a5d81a8](https://github.com/nrkno/sofie-code-standard-preset/commit/a5d81a8d55814fe6143c191b55c2aec5a7503f92)
+
 ## [2.4.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.3.1...v2.4.0) (Tue Mar 14 2023)
 
 
