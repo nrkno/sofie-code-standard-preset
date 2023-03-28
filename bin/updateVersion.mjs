@@ -119,7 +119,6 @@ if (Object.keys(breakingChanges).length) {
 		md += '\n### ' + groups[type] + '\n'
 
 		for (const change of commits) {
-			console.log(change)
 			md += `\n* ${change.scope ? `**${change.scope}** ` : ''}${change.description} [${
 				change.short
 			}](${repoUrl}/commit/${change.hash.trim()})`
