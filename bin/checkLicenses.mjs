@@ -1,8 +1,10 @@
 #! /usr/bin/env node
 'use strict'
 import meow from 'meow'
+import { createRequire } from 'module'
 import { readPackageUpSync } from 'read-pkg-up'
 import shell from 'shelljs'
+import path from 'path'
 
 const cli = meow(
 	`
@@ -26,6 +28,15 @@ const cli = meow(
 	}
 )
 
+// Find the path of the license-checker executable
+const require = createRequire(import.meta.url)
+const dir = require.resolve('license-checker')
+const licenseCheckerInfo = readPackageUpSync({ cwd: dir })
+const binName = licenseCheckerInfo.packageJson.bin?.['license-checker']
+if (licenseCheckerInfo.packageJson.name !== 'license-checker' || !binName)
+	throw new Error('Failed to find license-checker')
+const binPath = path.join(path.dirname(licenseCheckerInfo.path), binName)
+
 // This is so that when used in a private project it validates
 const pkgInfo = readPackageUpSync()
 const projectNameAndVersion = `${pkgInfo.packageJson.name}@${pkgInfo.packageJson.version}`
@@ -38,7 +49,7 @@ if (cli.flags.allowPackages) {
 	excludePackages += `;${cli.flags.allowPackages}`
 }
 
-let cmd = ['license-checker', `--onlyAllow "${allowListForMit}"`, `--excludePackages "${excludePackages}"`]
+let cmd = [binPath, `--onlyAllow "${allowListForMit}"`, `--excludePackages "${excludePackages}"`]
 
 if (!cli.flags.debug) {
 	cmd.push('--summary')
