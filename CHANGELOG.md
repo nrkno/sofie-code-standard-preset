@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
 
+## [2.4.3](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.4.2...v2.4.3) (Fri Apr 28 2023)
+
+
 ## [2.4.2](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.4.1...v2.4.2) (Fri Apr 28 2023)
 
 
