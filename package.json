@@ -33,10 +33,10 @@
 	},
 	"scripts": {
 		"changelog": "./bin/updateVersion.mjs",
-		"release": "yarn reset && yarn changelog",
+		"release": "run reset && run changelog",
 		"reset": "git clean -dfx && git reset --hard && yarn",
-		"validate:dependencies": "yarn audit --groups dependencies && yarn license-validate",
-		"validate:dev-dependencies": "yarn audit --groups devDependencies",
+		"validate:dependencies": "yarn npm audit --environment production && run license-validate",
+		"validate:dev-dependencies": "yarn npm audit --environment development",
 		"license-validate": "./bin/checkLicenses.mjs"
 	},
 	"files": [
@@ -47,7 +47,6 @@
 		"/eslint",
 		"/.prettierrc.json"
 	],
-	"devDependencies": {},
 	"dependencies": {
 		"@sofie-automation/eslint-plugin": "^0.1.1",
 		"@typescript-eslint/eslint-plugin": "^5.59.1",
@@ -70,5 +69,6 @@
 	},
 	"peerDependencies": {
 		"typescript": "~4.9"
-	}
+	},
+	"packageManager": "yarn@3.5.0"
 }
