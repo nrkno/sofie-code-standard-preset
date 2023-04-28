@@ -65,7 +65,7 @@ jobs:
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
           NEW_VERSION=$(node -p "require('./package.json').version")
-          yarn publish --access=public --tag ${{ steps.do-publish.outputs.tag }}
+          yarn npm publish --access=public --tag ${{ steps.do-publish.outputs.tag }}
 
           echo "**Published:** $NEW_VERSION" >> $GITHUB_STEP_SUMMARY
         env:
