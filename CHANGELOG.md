@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
 
+## [2.4.2](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.4.1...v2.4.2) (Fri Apr 28 2023)
+
+
+### Fixes
+
+* `sofie-licensecheck` unable to find `license-checker` with yarn3 (#16) [abd0fa6](https://github.com/nrkno/sofie-code-standard-preset/commit/abd0fa68559aebec2b6670ccbd436f487356b819)
+* remove stray console.log [2480da3](https://github.com/nrkno/sofie-code-standard-preset/commit/2480da3b2108fe9861312fc21c3f9361eba98153)
+
 ## [2.4.1](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.4.0...v2.4.1) (Sun Mar 26 2023)
 
 
