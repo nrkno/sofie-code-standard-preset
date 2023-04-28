@@ -63,7 +63,7 @@ jobs:
       - name: Publish to NPM
         if: ${{ steps.do-publish.outputs.tag }}
         run: |
-          yarn config set npmScopes.my-org.npmAuthToken $NPM_AUTH_TOKEN
+          yarn config set npmAuthToken $NPM_AUTH_TOKEN
 
           NEW_VERSION=$(node -p "require('./package.json').version")
           yarn npm publish --access=public --tag ${{ steps.do-publish.outputs.tag }}
