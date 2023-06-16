@@ -49,11 +49,11 @@
 	],
 	"dependencies": {
 		"@sofie-automation/eslint-plugin": "^0.1.1",
-		"@typescript-eslint/eslint-plugin": "^5.59.1",
-		"@typescript-eslint/parser": "^5.59.1",
-		"@typescript-eslint/utils": "^5.59.1",
-		"date-fns": "^2.29.3",
-		"eslint": "^8.39.0",
+		"@typescript-eslint/eslint-plugin": "^5.59.11",
+		"@typescript-eslint/parser": "^5.59.11",
+		"@typescript-eslint/utils": "^5.59.11",
+		"date-fns": "^2.30.0",
+		"eslint": "^8.42.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-jest": "^27.2.1",
 		"eslint-plugin-n": "^16.0.0",
@@ -64,7 +64,7 @@
 		"meow": "^11.0.0",
 		"prettier": "^2.8.8",
 		"read-pkg-up": "^9.1.0",
-		"semver": "^7.5.0",
+		"semver": "^7.5.2",
 		"shelljs": "^0.8.5"
 	},
 	"peerDependencies": {
