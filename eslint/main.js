@@ -65,7 +65,7 @@ module.exports = {
 				...commonRules,
 				...tsRules,
 				'no-process-exit': 'off',
-				'node/no-missing-import': 'off',
+				'n/no-missing-import': 'off',
 			},
 		},
 	],
