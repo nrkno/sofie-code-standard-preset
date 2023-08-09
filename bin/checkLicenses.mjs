@@ -1,9 +1,7 @@
 #! /usr/bin/env node
 'use strict'
 import meow from 'meow'
-import { createRequire } from 'module'
 import { readPackageUpSync } from 'read-pkg-up'
-import shell from 'shelljs'
 import path from 'path'
 import checker from 'license-checker'
 
@@ -37,7 +35,7 @@ const pkgInfo = readPackageUpSync()
 const projectNameAndVersion = `${pkgInfo.packageJson.name}@${pkgInfo.packageJson.version}`
 
 const allowLists = {
-	MIT: 'MIT;BSD;ISC;Apache-2.0;CC0;CC-BY-3.0;CC-BY-4.0;Unlicense;Artistic-2.0;Python-2.0',
+	MIT: 'MIT;BSD;ISC;Apache-2.0;CC0;CC-BY-3.0;CC-BY-4.0;Unlicense;Artistic-2.0;Python-2.0;BlueOak-1.0.0',
 	none: '',
 	// TODO - Add allowList with a list for GPL projects
 }

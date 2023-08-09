@@ -1,6 +1,6 @@
 {
 	"name": "@sofie-automation/code-standard-preset",
-	"version": "2.4.7",
+	"version": "2.5.0",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -64,8 +64,7 @@
 		"meow": "^11.0.0",
 		"prettier": "^2.8.8",
 		"read-pkg-up": "^9.1.0",
-		"semver": "^7.5.2",
-		"shelljs": "^0.8.5"
+		"semver": "^7.5.2"
 	},
 	"peerDependencies": {
 		"typescript": "~4.9"
