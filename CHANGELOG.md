@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
 
+## [2.5.1](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.5.0...v2.5.1) (Wed Aug 09 2023)
+
+
+### Fixes
+
+* revert feat: switch from eslint-plugin-node to eslint-plugin-n [722cad9] [617f100](https://github.com/nrkno/sofie-code-standard-preset/commit/617f100f74c818a067455a881072dc9902c47711)
+
 ## [2.5.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.4.7...v2.5.0) (Wed Aug 09 2023)
 
 
