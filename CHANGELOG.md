@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
 
+## [2.5.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.4.7...v2.5.0) (Wed Aug 09 2023)
+
+
+### Fixes
+
+* add BlueOak-1.0.0 to allowed licenses (#20) [f22f78f](https://github.com/nrkno/sofie-code-standard-preset/commit/f22f78fb20b9628955875817fc5cf313871056d8)
+* use license-checker directly instead of CLI [a685321](https://github.com/nrkno/sofie-code-standard-preset/commit/a6853219deb48dbb5830834f283dee7a8aaf3138)
+
+### Features
+
+* switch from eslint-plugin-node to eslint-plugin-n [722cad9](https://github.com/nrkno/sofie-code-standard-preset/commit/722cad945fed86c7c1c6c021d53f6fe0e7fdda09)
+
 ## [2.4.7](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.4.6...v2.4.7) (Wed May 10 2023)
 
 
