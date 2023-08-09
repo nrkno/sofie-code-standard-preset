@@ -5,11 +5,13 @@ import { createRequire } from 'module'
 import { readPackageUpSync } from 'read-pkg-up'
 import shell from 'shelljs'
 import path from 'path'
+import checker from 'license-checker'
 
 const cli = meow(
 	`
     Usage
       $ sofie-licensecheck
+	  $ sofie-licensecheck --allowPackages "package-name@1.2.3;other-package@1.2.3"
 
     Options
 	  --debug  Show full packages list
@@ -28,15 +30,6 @@ const cli = meow(
 	}
 )
 
-// Find the path of the license-checker executable
-const require = createRequire(import.meta.url)
-const dir = require.resolve('license-checker')
-const licenseCheckerInfo = readPackageUpSync({ cwd: dir })
-const binName = licenseCheckerInfo.packageJson.bin?.['license-checker']
-if (licenseCheckerInfo.packageJson.name !== 'license-checker' || !binName)
-	throw new Error('Failed to find license-checker')
-const binPath = path.join(path.dirname(licenseCheckerInfo.path), binName)
-
 // This is so that when used in a private project it validates
 const pkgInfo = readPackageUpSync()
 const projectNameAndVersion = `${pkgInfo.packageJson.name}@${pkgInfo.packageJson.version}`
@@ -49,11 +42,21 @@ if (cli.flags.allowPackages) {
 	excludePackages += `;${cli.flags.allowPackages}`
 }
 
-let cmd = [binPath, `--onlyAllow "${allowListForMit}"`, `--excludePackages "${excludePackages}"`]
+checker.init({
+	start: path.resolve('.'),
+	onlyAllow: allowListForMit,
+	excludePackages: excludePackages,
+	summary: !cli.flags.debug
+}, (err, packages) => {
 
-if (!cli.flags.debug) {
-	cmd.push('--summary')
-}
-
-const res = shell.exec(cmd.join(' '))
-process.exit(res.code)
+	if (err) {
+		//Handle error
+		console.error(err)
+		process.exit(1)
+	} else {
+		if (cli.flags.debug) {
+			console.log(packages)
+		}
+		process.exit(0)
+	}
+});
