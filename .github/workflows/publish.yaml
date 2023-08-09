@@ -53,4 +53,5 @@ jobs:
 
           echo "**Published:** $NEW_VERSION" >> $GITHUB_STEP_SUMMARY
         env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           CI: true
