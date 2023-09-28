@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
 
+## [2.5.2](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.5.1...v2.5.2) (Thu Sep 28 2023)
+
+
+### Fixes
+
+* pin `lint-staged` to node14 compatible version [31d2ee6](https://github.com/nrkno/sofie-code-standard-preset/commit/31d2ee6ff50b6241f48e65aadf1d69f1f8d01bd6)
+* add --allowList and --allowLicenses to license-validate script (#21) [a9529ef](https://github.com/nrkno/sofie-code-standard-preset/commit/a9529ef8344b882f24e8615858cb1024f5e3d0d0)
+
 ## [2.5.1](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.5.0...v2.5.1) (Wed Aug 09 2023)
 
 
