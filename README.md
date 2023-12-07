@@ -1,12 +1,18 @@
-# Sofie: The Modern TV News Studio Automation System (code standard preset)
-
+# Sofie Code Standard Preset
 [![Node CI](https://github.com/nrkno/sofie-code-standard-preset/actions/workflows/node.yaml/badge.svg)](https://github.com/nrkno/sofie-code-standard-preset/actions/workflows/node.yaml)
 [![npm](https://img.shields.io/npm/v/@sofie-automation/code-standard-preset)](https://www.npmjs.com/package/@sofie-automation/code-standard-preset)
 
-This library is used in the [**Sofie** TV News Studio Automation System](https://github.com/nrkno/Sofie-TV-automation/) for defining a code standard preset through [eslint](https://esling.org) and [prettier](https://prettier.io/).
+This is the _Sofie_ code standard preset library used in the [_**Sofie** TV Automation System_](https://github.com/nrkno/Sofie-TV-automation/) for defining a code standard preset through [_ESLint_](https://github.com/nrkno/sofie-eslint-plugin/) and [_Prettier_](https://prettier.io/).
 
 A script for checking compatible licenses is included.
 
+## General Sofie System Information
+* [_Sofie_ Documentation](https://nrkno.github.io/sofie-core/)
+* [_Sofie_ Releases](https://nrkno.github.io/sofie-core/releases)
+* [Contribution Guidelines](CONTRIBUTING.md)
+* [License](LICENSE)
+
+---
 ## Installation
 
 `yarn add --dev @sofie-automation/code-standard-preset`
@@ -139,9 +145,9 @@ module.exports = {
 
 **Remove** any other old linting or tsconfig files and refernces to them, for example a `config` folder containing `tsconfig...` files. These are no longer required.
 
-### Upgrade
+## Upgrade
 
-#### v2.0 to v2.1
+### v2.0 to v2.1
 
 This release introduces a simple replacement for `standard-version`
 
@@ -160,7 +166,7 @@ While you are here, try to update any `uses:` lines in the actions workflows, co
 - `actions/checkout@v3`
 - `actions/setup-node@v3`
 
-#### v0.4 to v0.5
+### v0.4 to v0.5
 
 This updates husky, and the config that goes with it.
 
@@ -169,3 +175,8 @@ Steps:
 - Create the `.husky/pre-commit` file
 - Remove the old husky config from `package.json`
 - Update the scripts and lint-staged config in `package.json`
+
+
+---
+
+_The NRK logo is a registered trademark of Norsk rikskringkasting AS. The license does not grant any right to use, in any way, any trademarks, service marks or logos of Norsk rikskringkasting AS._
