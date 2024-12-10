@@ -35,6 +35,7 @@ module.exports = {
 			},
 			rules: {
 				...commonRules,
+				"@sofie-automation/require-typed-object-values-and-entries": "off" // not possible to enforce this in JS
 			},
 		},
 		{
