@@ -175,6 +175,8 @@ module.exports = {
 
 If not already, the project should be updated to yarn v4 instead of yarn v1. yarn v1 was EOL a few years ago, and v4 is working for us quite nicely.
 
+1. Make sure that you are ready to do a semver major bump, with a new minimum nodejs version of v20.
+1. Update your package.json engines to require node 20
 1. Install the updated `@sofie-automation/code-standard-preset` package
 1. Install tools that used to be included by the preset package: `yarn add eslint husky lint-staged prettier`, any you do not need can be omitted.
 1. Check the package.json scripts;
@@ -185,6 +187,7 @@ If not already, the project should be updated to yarn v4 instead of yarn v1. yar
 1. Ensure the project has an updated typescript
    - This may require updating other tools, be sure to check jest/compiling later
 1. Remove the existing `.eslintrc.json` and replace with the new `eslint.config.mjs` example above. If you have modified your file from the default, you will need to translate that across.
+1. In your code, any references to eslint rules `node/*` have been renamed to `n/*`
 1. Make sure that everything is working. You will likely have a bunch of linter failures due to updated formatting and linting rules, which will need resolving.
 
 ### v2.0 to v2.1
