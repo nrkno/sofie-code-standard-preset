@@ -56,7 +56,16 @@ export async function generateEslintConfig(options) {
 			},
 		},
 
-		!options.disableNodeRules ? neslint.configs['flat/recommended-script'] : undefined,
+		!options.disableNodeRules
+			? {
+					...neslint.configs['flat/recommended-script'],
+					rules: {
+						...neslint.configs['flat/recommended-script'].rules,
+
+						'n/file-extension-in-import': 'error',
+					},
+				}
+			: undefined,
 
 		{
 			settings: {

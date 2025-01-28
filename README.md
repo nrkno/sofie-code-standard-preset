@@ -188,6 +188,7 @@ If not already, the project should be updated to yarn v4 instead of yarn v1. yar
    - This may require updating other tools, be sure to check jest/compiling later
 1. Remove the existing `.eslintrc.json` and replace with the new `eslint.config.mjs` example above. If you have modified your file from the default, you will need to translate that across.
 1. In your code, any references to eslint rules `node/*` have been renamed to `n/*`
+1. Due to the rules requiring conforming to ESM import syntax, you may need to update many file imports. You can use `npx fix-esm-import-path src` as an easy way of updating all the imports in the project
 1. Make sure that everything is working. You will likely have a bunch of linter failures due to updated formatting and linting rules, which will need resolving.
 
 ### v2.0 to v2.1

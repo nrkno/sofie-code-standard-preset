@@ -1,10 +1,10 @@
 {
 	// lib and target based on https://www.npmjs.com/package/@tsconfig/node12
 	"compilerOptions": {
-		"module": "commonjs",
+		"module": "Node16",
 		"target": "es2022",
 		"noImplicitAny": true,
-		"moduleResolution": "node",
+		"moduleResolution": "Node16",
 		"sourceMap": true,
 		"paths": {
 			"*": ["../node_modules/*"]
