@@ -125,6 +125,9 @@ export async function generateEslintConfig(options) {
 					},
 				],
 
+				// Enable a few rules from the strict pack
+				'@typescript-eslint/no-non-null-assertion': 'error',
+
 				/** Disable some annoyingly strict rules from the 'recommended-requiring-type-checking' pack */
 				'@typescript-eslint/no-unsafe-assignment': 0,
 				'@typescript-eslint/no-unsafe-member-access': 0,
@@ -169,6 +172,12 @@ export async function generateEslintConfig(options) {
 									'@testing-library/react',
 									'@testing-library/user-event',
 								],
+							},
+						],
+						'n/no-extraneous-import': [
+							'error',
+							{
+								allowModules: ['jest-mock-extended'],
 							},
 						],
 					},
