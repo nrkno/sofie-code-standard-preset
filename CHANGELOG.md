@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Convential Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit guidelines.
 
+## [3.0.0](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.5.2...v3.0.0) (Tue Feb 04 2025)
+
+
+### Features
+
+* update to eslint 9 and node 20 [7961b73](https://github.com/nrkno/sofie-code-standard-preset/commit/7961b735a9c8cd44c411fff90c4c17bd26106db8)
+
+### ⚠ BREAKING CHANGES
+
+- Node 20 is now the minimum supported version
+- Is now using eslint 9, configuration files will have to be updated
+
 ## [2.5.2](https://github.com/nrkno/sofie-code-standard-preset/compare/v2.5.1...v2.5.2) (Thu Sep 28 2023)
 
 
