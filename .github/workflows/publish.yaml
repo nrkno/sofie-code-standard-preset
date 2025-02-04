@@ -15,10 +15,10 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Use Node.js 14.x
+      - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
-          node-version: 14.x
+          node-version: 22.x
       - name: Check release is desired
         id: do-publish
         run: |
@@ -34,6 +34,7 @@ jobs:
       - name: Prepare Environment
         if: ${{ steps.do-publish.outputs.publish }}
         run: |
+          corepack enable
           yarn install
         env:
           CI: true

@@ -1,6 +1,6 @@
 {
 	"name": "@sofie-automation/code-standard-preset",
-	"version": "2.5.2",
+	"version": "3.0.0-0",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -16,8 +16,8 @@
 			"email": "julian@superfly.tv"
 		},
 		{
-			"name": "Balte de Wit",
-			"email": "balte@superfly.tv"
+			"name": "Mint de Wit",
+			"email": "mint@superfly.tv"
 		},
 		{
 			"name": "Richard Cartwright",
@@ -25,7 +25,7 @@
 		}
 	],
 	"engines": {
-		"node": "^14.18 || ^16.14 || >=18"
+		"node": ">= 20"
 	},
 	"bin": {
 		"sofie-licensecheck": "./bin/checkLicenses.mjs",
@@ -48,26 +48,26 @@
 		"/.prettierrc.json"
 	],
 	"dependencies": {
-		"@sofie-automation/eslint-plugin": "^0.1.1",
-		"@typescript-eslint/eslint-plugin": "^5.62.0",
-		"@typescript-eslint/parser": "^5.62.0",
-		"@typescript-eslint/utils": "^5.62.0",
-		"date-fns": "^2.30.0",
-		"eslint": "^8.50.0",
-		"eslint-config-prettier": "^8.10.0",
-		"eslint-plugin-jest": "^27.4.0",
-		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-prettier": "^4.2.1",
-		"husky": "^8.0.3",
+		"@sofie-automation/eslint-plugin": "github:SuperFlyTV/sofie-eslint-plugin#commit=7d1eecabc9ec2fa2c27c167a52c8ed6b1846e5a9",
+		"date-fns": "^4.1.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-jest": "^28.11.0",
+		"eslint-plugin-n": "^17.15.1",
+		"eslint-plugin-prettier": "^5.2.3",
 		"license-checker": "^25.0.1",
-		"lint-staged": "13.2.2",
-		"meow": "^11.0.0",
-		"prettier": "^2.8.8",
-		"read-pkg-up": "^9.1.0",
-		"semver": "^7.5.4"
+		"meow": "^13.2.0",
+		"read-package-up": "^11.0.0",
+		"semver": "^7.6.3",
+		"typescript-eslint": "^8.21.0"
+	},
+	"devDependencies": {
+		"@types/eslint": "^9.6.1",
+		"prettier": "^3.4.2"
 	},
 	"peerDependencies": {
-		"typescript": "~4.9"
+		"eslint": "^9",
+		"prettier": "^3",
+		"typescript": "~5.7"
 	},
-	"packageManager": "yarn@3.5.0"
+	"packageManager": "yarn@4.6.0"
 }
